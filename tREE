@@ -32,44 +32,45 @@ void TambahNod (NOD **p, char item){
    *p=n;
 }
 
-void preorder (POKOK *T){
-	if (!PokokKosong(T)){
-   	cout<<" "<<T->data;preorder(T->left);preorder (T->right);
-   }
+void preOrder(POKOK *T){
+	if(!PokokKosong(T)){
+		cout<<" "<<T->data;preOrder(T->left);preOrder(T->right);
+	}
 }
 
-void inorder (POKOK *T){
-	if (!PokokKosong(T)){
-   	inorder(T->left);
-      cout<<" "<<T->data;inorder(T->right);
-   }
+void inOrder(POKOK *T){
+if(!PokokKosong(T)){
+		inOrder(T->left);
+			cout<<" "<<T->data;inOrder(T->right);
+	}
 }
-void postorder (POKOK *T){
-	if (!PokokKosong(T)){
-   	postorder(T->left);
-      postorder(T->right);
-      cout<<" "<<T->data;
-   }
+
+void postOrder(POKOK *T){
+	if(!PokokKosong(T)){
+		postOrder(T->left);
+			postOrder(T->right);
+   			cout<<" "<<T->data;
+	}
 }
 int main ()
 {
 		POKOK *kelapa;
       char buah;
       BinaPokok(&kelapa);
-      TambahNod(&kelapa,buah=' M ');
-      TambahNod(&kelapa->left,buah=' E ');
-      TambahNod(&kelapa->left->right,buah=' I ');
-      TambahNod(&kelapa->right,buah =' L ');
-      TambahNod(&kelapa->right->right,buah=' O ');
-      TambahNod(&kelapa->right->right->left,buah =' D ');
-      cout<<"Tampilan secara preorder : ";
-      preorder(kelapa);
+      TambahNod(&kelapa,buah='M');
+      TambahNod(&kelapa->left,buah='E');
+      TambahNod(&kelapa->left->right,buah='I');
+      TambahNod(&kelapa->right,buah ='L');
+      TambahNod(&kelapa->right->right,buah='O');
+      TambahNod(&kelapa->right->right->left,buah ='D');
+      cout<<"Tampilan secara preorder \t: ";
+      preOrder(kelapa);
       cout<<endl;
-      cout<<"Tampilan secara inorder : ";
-      inorder(kelapa);
+      cout<<"Tampilan secara inorder \t: ";
+      inOrder(kelapa);
       cout<<endl;
-      cout<<"Tampilan secara postorder : ";
-      postorder(kelapa);
+      cout<<"Tampilan secara postorder \t: ";
+      postOrder(kelapa);
       cout<<endl;
       cout<<endl;
 
